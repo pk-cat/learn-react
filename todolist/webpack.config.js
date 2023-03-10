@@ -6,8 +6,9 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: __dirname + '/dist',
+    assetModuleFilename: 'images/[hash][ext][query]'
   },
-
+  devtool: "eval-cheap-source-map",
   // rules
   module: {
     rules: [
@@ -21,11 +22,12 @@ module.exports = {
           },
         },
       },
+
+      // handle image 
       {
-        test: /\.js$/,
-        enforce: "pre",
-        use: ["source-map-loader"],
-      },
+        test: /\.png/,
+        type: 'asset/resource'
+      }
     ],
   },
 

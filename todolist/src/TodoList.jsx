@@ -1,5 +1,5 @@
 import React from "react";
-
+const image = require("../public/logo192.png")
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
@@ -50,6 +50,7 @@ class TodoList extends React.Component {
             );
           })}
         </ul>
+        <img src={image} alt=""/>
       </>
     );
   }
